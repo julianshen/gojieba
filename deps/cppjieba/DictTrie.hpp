@@ -69,6 +69,12 @@ class DictTrie {
     return min_weight_;
   }
 
+  void LoadUserDictExt(const string& filePaths) {
+    LoadUserDict(filePaths);
+    Shrink(static_node_infos_);
+    CreateTrie(static_node_infos_);
+  }
+
  private:
   void Init(const string& dict_path, const string& user_dict_paths, UserWordWeightOption user_word_weight_opt) {
     LoadDict(dict_path);

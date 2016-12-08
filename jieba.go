@@ -98,6 +98,20 @@ func (x *Jieba) AddWord(s string) {
 	C.AddWord(x.jieba, cstr)
 }
 
+func (x *Jieba) AddWordWithTag(s string, tag string) {
+	cstr := C.CString(s)
+	defer C.free(unsafe.Pointer(cstr))
+	tagCstr := C.CString(tag)
+	defer C.free(unsafe.Pointer(tagCstr))
+	C.AddWordWithTag(x.jieba, cstr, tagCstr)
+}
+
+func (x *Jieba) LoadUserDict(s string) {
+	cstr := C.CString(s)
+	defer C.free(unsafe.Pointer(cstr))
+	C.LoadUserDict(x.jieba, cstr)
+}
+
 func (x *Jieba) Tokenize(s string, mode TokenizeMode, hmm bool) []Word {
 	c_int_hmm := 0
 	if hmm {

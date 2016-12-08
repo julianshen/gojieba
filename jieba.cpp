@@ -84,6 +84,14 @@ void AddWord(Jieba x, const char* word) {
   ((cppjieba::Jieba*)x)->InsertUserWord(word);
 }
 
+void AddWordWithTag(Jieba x, const char* word, const char* tag) {
+  ((cppjieba::Jieba*)x)->InsertUserWord(word, tag);
+}
+
+void LoadUserDict(Jieba x, const char* filePaths) {
+  ((cppjieba::Jieba*)x)->LoadUserDict(filePaths);
+}
+
 Word* Tokenize(Jieba x, const char* sentence, TokenizeMode mode, int is_hmm_used) {
   std::vector<cppjieba::Word> words;
   switch (mode) {
