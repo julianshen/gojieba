@@ -16,10 +16,12 @@ var (
 
 func init() {
 	DICT_DIR = path.Join(path.Dir(getCurrentFilePath()), "dict")
-	DICT_PATH = path.Join(DICT_DIR, "jieba.dict.utf8")
+	//DICT_PATH = path.Join(DICT_DIR, "jieba.dict.utf8")
+	DICT_PATH = path.Join(DICT_DIR, "dict.txt.big")
 	HMM_PATH = path.Join(DICT_DIR, "hmm_model.utf8")
 	USER_DICT_PATH = path.Join(DICT_DIR, "user.dict.utf8")
-	IDF_PATH = path.Join(DICT_DIR, "idf.utf8")
+	//IDF_PATH = path.Join(DICT_DIR, "idf.utf8")
+	IDF_PATH = path.Join(DICT_DIR, "idf.txt.big")
 	STOP_WORDS_PATH = path.Join(DICT_DIR, "stop_words.utf8")
 }
 
